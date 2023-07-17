@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './newTodo.css';
 
 
-const NewTodo = () => {
+const NewTodo = (props) => {
 const[todo, setTodo] = useState({title: "", description:""});
 const{title, description} = todo;
 
@@ -16,7 +16,8 @@ const handleChange=(e)=>{
 
 const handleSubmit=(e)=>{
     e.preventDefault();
-    console.log(todo);
+    // console.log(todo);
+    props.onAddTodo(todo)
     setTodo({title:"", description:""})
     }
     
